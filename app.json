@@ -1,4 +1,5 @@
 {
+  
   "expo": {
     "name": "Firebase Login Template",
     "slug": "firebase-login-template",
@@ -9,6 +10,13 @@
       "android",
       "web"
     ],
+    "android":{
+      "package":"com.firebaseassignment.myapp",
+      "versionCode":1,
+      "permissions":[],
+      "icon":"./assets/icon.png"
+
+    },
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
