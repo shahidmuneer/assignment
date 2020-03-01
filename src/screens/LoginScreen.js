@@ -35,11 +35,12 @@ const LoginScreen = ({ navigation }) => {
       email: email.value,
       password: password.value
     });
+    console.log(response)
 
     if (response.error) {
       setError(response.error);
     }
-
+    navigation.navigate("Home")
     setLoading(false);
   };
 
@@ -83,8 +84,7 @@ const LoginScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      <Button loading={loading} mode="contained" onPress={()=>navigation.navigate("Home")}//_onLoginPressed}
-      >
+      <Button loading={loading} mode="contained" onPress={_onLoginPressed}>
         Login
       </Button>
 
