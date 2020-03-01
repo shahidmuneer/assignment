@@ -40,8 +40,10 @@ const LoginScreen = ({ navigation }) => {
     if (response.error) {
       setError(response.error);
     }
-    navigation.navigate("Home")
-    setLoading(false);
+    if (Object.keys(response).length==0) {
+      navigation.navigate("Home")
+    }
+     setLoading(false);
   };
 
   return (
