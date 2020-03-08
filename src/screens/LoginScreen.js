@@ -10,13 +10,14 @@ import { theme } from "../core/theme";
 import { emailValidator, passwordValidator } from "../core/utils";
 import { loginUser } from "../api/auth-api";
 import Toast from "../components/Toast";
+import * as Font from 'expo-font';
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState({ value: "", error: "" });
   const [password, setPassword] = useState({ value: "", error: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
+  Font.loadAsync();
   const _onLoginPressed = async () => {
     if (loading) return;
 
@@ -40,9 +41,9 @@ const LoginScreen = ({ navigation }) => {
     if (response.error) {
       setError(response.error);
     }
-    if (Object.keys(response).length==0) {
-      navigation.navigate("Home")
-    }
+    // if (Object.keys(response).length==0) {
+    //   navigation.navigate("Home")
+    // }
      setLoading(false);
   };
 
